@@ -289,6 +289,26 @@
           "target": "components/ui/warcraftcn/assets/cursors/undead.cur"
         }
       ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Warcraft Switch",
+      "description": "A Warcraft-themed switch component with faction-specific switch styles",
+      "dependencies": ["radix-ui"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/warcraftcn/switch.tsx",
+          "type": "registry:component",
+          "target": "components/ui/warcraftcn/switch.tsx"
+        },
+        {
+          "path": "components/ui/warcraftcn/styles/warcraft.css",
+          "type": "registry:component",
+          "target": "components/ui/warcraftcn/styles/warcraft.css"
+        }
+      ]
     }
   ]
 }
