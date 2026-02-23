@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import * as SwitchPrimitive from "@radix-ui/react-switch"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -76,10 +77,8 @@ const thumbVariants = cva(
 )
 
 export interface WarcraftSwitchProps
-  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root>,
-    VariantProps<typeof switchVariants> {
+  extends React.ComponentProps<typeof SwitchPrimitive.Root>, VariantProps<typeof switchVariants> {
   label?: string
-  ref?: React.Ref<React.ComponentRef<typeof SwitchPrimitive.Root>>
 }
 
 const WarcraftSwitch = ({
@@ -91,7 +90,7 @@ const WarcraftSwitch = ({
   ...props
 }: WarcraftSwitchProps) => {
   return (
-    <label className="flex items-center gap-3 cursor-pointer">
+    <label className={cn("flex items-center gap-3", props.disabled ? "cursor-not-allowed" : "cursor-pointer")}>
       <SwitchPrimitive.Root
         ref={ref}
         className={cn(
